@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .filled {
+      /* content-visibility: auto; */
+    }
+}
+
 html {
     font-family: "Afacad Flux", sans-serif !important;
 }
+
