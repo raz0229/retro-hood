@@ -1,9 +1,11 @@
 <script>
     import Hero from "$lib/components/hero.svelte";
+    import Services from "$lib/components/services.svelte";
 </script>
 
 <div class="container">
     <Hero/>
+    <Services/>
 </div>
 
 <style>
@@ -11,6 +13,6 @@
         margin: 0;
         background-color: #0a0909;
         max-width: 100%;
-        height: 100vh;
+        height: 100%;
     }
 </style>
