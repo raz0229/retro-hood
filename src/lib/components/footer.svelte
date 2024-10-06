@@ -46,6 +46,7 @@
 <style>
 	.footer {
 		position: relative;
+		background-color: #f8f8f8;
 	}
 	.background-blur {
 		width: 100%;
