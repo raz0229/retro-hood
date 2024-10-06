@@ -4,11 +4,13 @@
     import Blogs from "$lib/components/blogs.svelte";
     import Slider from "$lib/components/slider.svelte";
     import Products from "$lib/components/products.svelte";
+    import WhyUs from "$lib/components/why-us.svelte";
 </script>
 
 <div class="container">
-    <Hero/>
-    <Services/>
+    <Hero />
+    <WhyUs />
+    <Services />
 </div>
 
 <div class="container-white">
