@@ -74,7 +74,7 @@
 
 	@media only screen and (max-width: 800px) {
 		.service {
-			margin: 2rem 4rem;
+			margin: 2rem 0rem;
 		}
         img {
             width: 15rem;
