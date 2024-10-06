@@ -3,7 +3,6 @@
 		const observer = new IntersectionObserver((entries) => {
 			if (entries[0].isIntersecting) {
 				// element in viewport
-				console.log('element in viewport', entries[0].target)
 				entries[0].target.style.filter = 'blur(0)';
 			} else {
           		entries[0].target.style.filter = 'blur(10px)';

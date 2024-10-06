@@ -1,12 +1,16 @@
 <script>
     import Hero from "$lib/components/hero.svelte";
     import Services from "$lib/components/services.svelte";
+    import Blogs from "$lib/components/blogs.svelte";
 </script>
 
 <div class="container">
     <Hero/>
     <Services/>
 </div>
+
+<Blogs />
+
 
 <style>
     .container {
