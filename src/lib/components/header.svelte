@@ -18,7 +18,7 @@
 		},
 		{
 			text: 'Process',
-			href: '#'
+			href: '/process'
 		},
 		{
 			text: 'Contact us',
@@ -81,7 +81,7 @@
 				class="flex flex-1 items-center justify-around sm:items-stretch sm:justify-around"
 				style="align-items: center;"
 			>
-				<div class="flex flex-shrink-0 items-center">
+				<div on:click={()=>location.href='/'} class="flex flex-shrink-0 items-center">
 					<img class="h-40 w-auto" src="logo.png" alt="Your Company" />
 				</div>
 				<div class="hidden sm:ml-6 sm:block">

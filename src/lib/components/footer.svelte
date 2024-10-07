@@ -1,4 +1,7 @@
 <script>
+
+	export let bgColor = '#f8f8f8'
+
 	function actionWhenInViewport(e) {
 		const observer = new IntersectionObserver((entries) => {
 			if (entries[0].isIntersecting) {
@@ -13,7 +16,7 @@
 	}
 </script>
 
-<div class="footer">
+<div class="footer" style="background-color: {bgColor};">
 	<div class="background-blur"></div>
 	<div use:actionWhenInViewport  class="center-text-large blur-effect">
 		<div class="starter">
@@ -46,12 +49,11 @@
 <style>
 	.footer {
 		position: relative;
-		background-color: #f8f8f8;
 	}
 	.background-blur {
 		width: 100%;
 		background-color: rgba(220, 20, 20, 0.85);
-		height: 100vh;
+		height: 80vh;
 		border-radius: 45%;
 		margin-top: 8rem;
 		margin-left: 0;
