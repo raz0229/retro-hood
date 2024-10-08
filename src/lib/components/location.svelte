@@ -9,7 +9,7 @@
         See us <br> in Pakistan
     </h1>
     <h1 class="lg:pl-48 mt-8 md:pl-20 pl-2 text-[#6d6d6d] font-light text-2xl text-white">
-        Let's meet us face to face sometimes
+        Let's meet up face to face sometimes
     </h1>
 
     <div class="maps mt-8 flex justify-center">
