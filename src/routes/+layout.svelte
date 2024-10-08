@@ -4,7 +4,8 @@
     import Footer from "$lib/components/footer.svelte";
     import { page } from "$app/stores"
   
-    $: color = $page.url.pathname === '/process' 
+    $: color = $page.url.pathname === '/process' ||
+              $page.url.pathname === '/about-us' 
                 ? '#0a0909'
                 : '#f8f8f8'
 

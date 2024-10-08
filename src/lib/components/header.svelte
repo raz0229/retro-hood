@@ -6,7 +6,7 @@
 	let navs = [
 		{
 			text: 'About us',
-			href: '#'
+			href: '/about-us'
 		},
 		{
 			text: 'Services',
