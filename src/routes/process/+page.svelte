@@ -88,6 +88,10 @@
 
 </script>
 
+<svelte:head>
+    <title>RetroHood | Process</title>
+</svelte:head>
+
 <div use:actionWhenInViewport class="container sm:items-stretch p-16">
 	<Tag text="HOW WE DO IT" />
 	{#if animate}

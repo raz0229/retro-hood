@@ -64,6 +64,10 @@
 
 </script>
 
+<svelte:head>
+    <title>RetroHood | About Us</title>
+</svelte:head>
+
 <div use:actionWhenInViewport class="container sm:items-stretch p-16">
 	<Tag text="WE ARE A TEXTILE INDUSTRY" />
 	{#if animate}

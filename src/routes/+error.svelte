@@ -1,3 +1,8 @@
+
+<svelte:head>
+    <title>RetroHood | 404</title>
+</svelte:head>
+
 <div class="container-white sm:items-stretch p-16">
     <div class="flex justify-center">
         <div class="image">

@@ -22,7 +22,7 @@
 		},
 		{
 			text: 'Contact us',
-			href: '#'
+			href: '/contact-us'
 		}
 	];
 </script>

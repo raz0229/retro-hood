@@ -86,6 +86,10 @@
 	}
 </script>
 
+<svelte:head>
+    <title>RetroHood | Products</title>
+</svelte:head>
+
 <div use:actionWhenInViewport class="container sm:items-stretch p-16">
 	<Tag text="How we do it" />
 	{#if animate}

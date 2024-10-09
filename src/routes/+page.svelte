@@ -70,6 +70,10 @@
 	];
 </script>
 
+<svelte:head>
+    <title>RetroHood | Home</title>
+</svelte:head>
+
 <div class="container">
     <Hero />
     <WhyUs />
