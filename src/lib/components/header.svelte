@@ -10,7 +10,7 @@
 		},
 		{
 			text: 'Services',
-			href: '#'
+			href: '/services'
 		},
 		{
 			text: 'Products',

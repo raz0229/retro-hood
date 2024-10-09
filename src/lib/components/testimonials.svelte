@@ -3,6 +3,7 @@
 	import { quintInOut } from 'svelte/easing';
 
 	let animate = true;
+	export let color = 'white';
 
 	const testimonials = [
 		{
@@ -62,10 +63,10 @@
 		out:fly={{ duration: 300, x: -600, opacity: 0.5 }}
 		class="lg:p-32 md:p-16 p-4"
 	>
-		<h3 class="font-normal text-3xl text-white">0{currentIndex + 1}/03</h3>
+		<h3 class="font-normal text-3xl text-{color}">0{currentIndex + 1}/03</h3>
 
 		<h3
-			class="lg:flex md:flex block justify-between font-bold text-2xl pt-4 pb-4 text-white lg:ml-16 md:ml-8 ml-2"
+			class="lg:flex md:flex block justify-between font-bold text-2xl pt-4 pb-4 text-{color} lg:ml-16 md:ml-8 ml-2"
 			style="line-height: 1.6rem;"
 		>
 			<div>
@@ -75,7 +76,7 @@
 				<div
 					on:click={moveLeft}
 					style="transition: all 0.3s ease; width: 5rem; height: 5rem; display: grid; place-content: center;"
-					class="cursor-pointer hover:bg-[#cb0f0f] rounded-full border-2 border-[#cb0f0f] arrow-left"
+					class="cursor-pointer bg-[#0a0909] hover:bg-[#cb0f0f] rounded-full border-2 border-[#cb0f0f] arrow-left"
 				>
                     {#if currentIndex == 0}
 					<img
@@ -95,7 +96,7 @@
 				<div
 					on:click={moveRight}
 					style="transition: all 0.3s ease; width: 5rem; height: 5rem; display: grid; place-content: center;"
-					class="cursor-pointer hover:bg-[#cb0f0f] rounded-full border-2 border-[#cb0f0f] arrow-left"
+					class="cursor-pointer bg-[#0a0909] hover:bg-[#cb0f0f] rounded-full border-2 border-[#cb0f0f] arrow-left"
 				>
                     {#if currentIndex == testimonials.length - 1}
 					<img
@@ -118,7 +119,7 @@
 			<div class="flex justify-end">
 				<h4
 					style="max-width: 31rem;"
-					class="lg:text-3xl md:text-3xl text-2xl font-light text-white"
+					class="lg:text-3xl md:text-3xl text-2xl font-light text-{color}"
 				>
 					{testimonials[0].review}
 				</h4>
@@ -128,8 +129,8 @@
 					<img style="width: 6rem;" src="testimonial.png" alt="profile" />
 				</div>
 				<div class="lg:text-left md:text-left text-center">
-					<h3 class="mt-2 mb-2 text-3xl font-bold text-white">{testimonials[currentIndex].name}</h3>
-					<h3 style="text-transform: uppercase;" class="mt-2 text-2xl font-light text-white">
+					<h3 class="mt-2 mb-2 text-3xl font-bold text-{color}">{testimonials[currentIndex].name}</h3>
+					<h3 style="text-transform: uppercase;" class="mt-2 text-2xl font-light text-{color}">
 						{testimonials[currentIndex].designation}
 					</h3>
 					<h3 class="mb-2 mt-[-4px] text-2xl font-light text-[#6d6d6d]">
