@@ -1,6 +1,8 @@
 <script>
     import Tag from '$lib/components/atoms/tag.svelte';
+    import Location from '$lib/components/location.svelte';
 	import { scale } from 'svelte/transition';
+    import ActionButton from '$lib/components/atoms/action-button.svelte';
 	
 	let animate = false;
 	function actionWhenInViewport(e) {
@@ -15,6 +17,10 @@
 
 		observer.observe(e);
 	}
+
+    const submitHandler = () => {
+        console.log('Submit event')
+    }
 </script>
 
 <svelte:head>
@@ -32,9 +38,45 @@
 			Let us tell your story through visuals
 		</h1>
 	{/if}
+
+    <Tag text="Contact us" />
+    <form class="form lg:pl-40 lg:pr-40 md:pl-24 md:pr-24 pl-4 pr-4">
+        <div style="line-height: 1.75rem;" class="text mb-8 font-bold text-white text-3xl">
+            We would love to hear from you <br> even if you just want to say Hi!
+        </div>
+
+        <div style="line-height: 1.75rem;" class="mt-16 text mb-8 font-light text-[#6d6d6d] text-3xl">
+            <input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="NAME" type="text">    
+        </div>
+
+        <div class="lg:flex md:block block gap-16">
+            <div style="line-height: 1.75rem; flex-grow: 1;" class="mt-8 text mb-8 font-light text-[#6d6d6d] text-3xl">
+                <input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="EMAIL" type="email">    
+            </div>
+            <div style="line-height: 1.75rem; flex-grow: 1;" class="mt-8 text mb-8 font-light text-[#6d6d6d] text-3xl">
+                <input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="PHONE NUMBER" type="phone">    
+            </div>
+        </div>
+
+        <div style="line-height: 1.75rem;" class="mt-16 text mb-8 font-light text-[#6d6d6d] text-3xl">
+            <input style="width: 100%" class="mb-16 bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="YOUR MESSAGE" type="text">    
+        </div>
+
+        <div class="btn"
+            on:click="{submitHandler}"
+        >
+            <ActionButton text="Submit" />
+        </div>
+    </form>
+
+    <Location />
 </div>
 
 <style>
+
+    input {
+        outline: none;
+    }
 	.container,
 	.container-white {
 		margin: 0;
