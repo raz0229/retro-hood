@@ -5,7 +5,7 @@
     let selectedCategory = 'All';
     let tempProducts = [];
 
-	const buttons = [
+	let buttons = [
 		{
 			text: 'All',
 			filter: 'all'
@@ -38,6 +38,9 @@
 
     const selectCategory = (btn) => {
         selectedCategory = btn.text;
+		console.log(selectedCategory, btn)
+		console.log(selectedCategory == btn.text)
+		buttons = buttons
 
         if (btn.filter == 'all')
             products = tempProducts
@@ -55,14 +58,23 @@
 <div class="lg:p-32 md:p-16 p-2">
 	<div class="buttons flex lg:gap-6 md:gap-4 gap-2 flex-wrap">
 		{#each buttons as btn}
+			{#if selectedCategory == btn.text}
 			<button
-                on:click={()=>selectCategory(btn)}
-                class:bg-red-600="{btn.text == selectedCategory}"
-                class:text-white="{btn.text == selectedCategory}"
+				on:click={()=>selectCategory(btn)}
 				style="min-width: 6rem; text-align: center; outline: none;"
-				class="cursor-pointer mt-2 mb-2 rounded-full pt-1 pb-1 pr-3 pl-3 text-black focus:text-white font-normal text-xl bg-white hover:bg-gray-200 focus:bg-[#cb0f0f]"
-				>{btn.text}</button
+				class="cursor-pointer mt-2 mb-2 rounded-full pt-1 pb-1 pr-3 pl-3 text-white font-normal text-xl bg-[#cb0f0f]"
+				class:selected-btn="{selectCategory == btn.text}"
+                >{btn.text}</button
 			>
+			{:else}
+			<button
+				on:click={()=>selectCategory(btn)}
+				style="min-width: 6rem; text-align: center; outline: none;"
+				class="cursor-pointer mt-2 mb-2 rounded-full pt-1 pb-1 pr-3 pl-3 text-black font-normal text-xl bg-white hover:bg-gray-200"
+				class:selected-btn="{selectCategory == btn.text}"
+                >{btn.text}</button
+			>
+			{/if}
 		{/each}
 	</div>
 

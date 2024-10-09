@@ -26,10 +26,10 @@
             price: '10'
         },
         {
-            name: 'Basic Hoodie',
+            name: 'Basic Sweatshirt',
             subtitle: 'Retrohood | Sweatshirt',
             type: 'sweatshirt',
-            image: 'lineup/hoodie.png',
+            image: 'lineup/sweatshirt.png',
             sizes: ['S', 'M', 'L'],
             selectedSize: 'S',
             price: '45'
@@ -53,19 +53,19 @@
             price: '15'
         },
         {
-            name: 'Basic Hoodie',
+            name: 'Basic Sweatshirt',
             subtitle: 'Retrohood | Sweatshirt',
             type: 'sweatshirt',
-            image: 'lineup/hoodie.png',
+            image: 'lineup/sweatshirt.png',
             sizes: ['S', 'M', 'L'],
             selectedSize: 'S',
             price: '19.99'
         },
         {
-            name: 'Basic Hoodie',
+            name: 'Basic Beanie',
             subtitle: 'Retrohood | Beanie',
             type: 'beanie',
-            image: 'lineup/hoodie.png',
+            image: 'lineup/beanie.png',
             sizes: ['S', 'M', 'L'],
             selectedSize: 'S',
             price: '5'
