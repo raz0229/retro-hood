@@ -10,13 +10,13 @@
       },
       {
         id: 2,
-        name: "Basic Black Hoodie Kaius 01 Three",
-        image: "/lineup/hoodie.png",
+        name: "Basic White Hoodie Kaius 01 Three",
+        image: "/lineup/hoodie-white.png",
       },
       {
         id: 3,
-        name: "Basic Black Hoodie Kaius 01 Three",
-        image: "/lineup/hoodie.png",
+        name: "Basic White Hoodie Kaius 01 Three",
+        image: "/lineup/hoodie-white.png",
       },
       {
         id: 4,

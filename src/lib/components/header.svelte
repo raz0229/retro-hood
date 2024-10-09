@@ -14,7 +14,7 @@
 		},
 		{
 			text: 'Products',
-			href: '#'
+			href: '/products'
 		},
 		{
 			text: 'Process',
