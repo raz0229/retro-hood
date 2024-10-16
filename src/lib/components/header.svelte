@@ -91,7 +91,7 @@
 						{#each navs as nav}
 							<a
 								href={nav.href}
-								class="px-3 pt-2 mb-0 text-sm font-medium text-gray-300 hover:border-b-2 hover:border-solid hover:border-sky-500"
+								class="px-3 pt-2 mb-0 text-sm font-medium text-gray-300 hover:text-[#cb0f0f]"
 								>{nav.text}</a
 							>
 						{/each}
@@ -126,6 +126,7 @@
 <style>
 	a {
 		font-weight: 400;
+		transition: all 0.3s ease-in-out;
 	}
 
     .mobile-menu {
@@ -135,6 +136,5 @@
         padding-top: 2rem;
     }
 
-	.underline {
-	}
+
 </style>
