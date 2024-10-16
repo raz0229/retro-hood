@@ -83,7 +83,7 @@
 <div class="container-white">
     <Products />
     <Slider />
-    <Blogs />
+    <!-- <Blogs /> -->
 </div>
 
 
