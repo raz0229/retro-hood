@@ -78,7 +78,7 @@
 	}
 
 	.hero-image > .image {
-		background-image: url(hero.jpg);
+		background-image: url("hero.jpg");
 		background-position: top;
 		background-size: cover;
 		height: 15rem;
