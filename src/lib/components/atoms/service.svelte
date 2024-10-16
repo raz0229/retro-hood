@@ -8,6 +8,7 @@
 <div
 	on:mouseover={() => (isHovered = true)}
 	on:mouseout={() => (isHovered = false)}
+	on:click={()=>location.href = '/services'}
 	class="service"
 >
 	<div class:filled={isHovered} class="z-20 hover:filled name text-5xl relative">

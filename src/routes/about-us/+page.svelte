@@ -5,6 +5,7 @@
     import IndustryExcellence from '$lib/components/atoms/industry-excellence.svelte';
     import Testimonials from '$lib/components/testimonials.svelte';
     import Location from '$lib/components/location.svelte';
+    import PhotoGallery from '$lib/components/photo-gallery.svelte';
 
     import { fade, scale } from 'svelte/transition';
 	
@@ -69,7 +70,10 @@
 </svelte:head>
 
 <div use:actionWhenInViewport class="container sm:items-stretch p-16">
-	<Tag text="WE ARE A TEXTILE INDUSTRY" />
+	<Tag 
+        text="WE ARE RETROHOOD - A TEXTILE INDUSTRY" 
+        color="#cb0f0f"
+        />
 	{#if animate}
 	<h1
 		transition:scale={{ duration: 500, start: 0.5 }}
@@ -100,6 +104,7 @@
                 title: 'Mission',
                 details: 'We are committed to offering clothing brands worldwide the highest quality products at fair prices, ensuring total customer satisfaction.',
                 color: 'white',
+                titleColor: 'red-600',
                 detailGrey: true
             }
         } />
@@ -109,7 +114,8 @@
                 title: 'Vision',
                 details: 'To become the foremost textile and fashion manufacturer of the 21st century, driving the global adoption of the Fourth Industrial Revolution.',
                 color: 'white',
-                detailGrey: true
+                detailGrey: true,
+                titleColor: 'red-600',
             }
         } />
     </div>
@@ -136,7 +142,7 @@
 
 </div>
 
-<div class="container-white sm:items-stretch p-16">
+<div class="container sm:items-stretch p-16">
 
     <h1 class="font-extrabold text-5xl lg:pl-52 md:pl-32 pl-8 text-[#cb0f0f] ">
         Excellence in <br> every stitch
@@ -147,25 +153,25 @@
     <div class="col-span-2 row-span-3 col-start-2 row-start-2">
         <div class="image" style="text-align: -webkit-center;">
             <img style="width: 26rem;" src="hero.jpg" alt="hero">
-            <p class="text-[#6d6d6d] text-center text-2xl">years of sustainable business in Pakistan</p>
+            <p class="text-[#cb0f0f] text-center text-2xl">years of sustainable business in Pakistan</p>
         </div>
     </div>
 <div class="col-span-2 row-span-3 col-start-1 row-start-6">
     <div class="image" style="text-align: -webkit-center;">
         <img style="width: 26rem;" src="hero.jpg" alt="hero">
-        <p class="text-[#6d6d6d] text-center text-2xl">years of sustainable business in Pakistan</p>
+        <p class="text-[#cb0f0f] text-center text-2xl">years of sustainable business in Pakistan</p>
     </div>
 </div>
 <div class="col-span-2 row-span-4 col-start-5 row-start-1">
     <div class="image" style="text-align: -webkit-center;">
         <img style="width: 18rem; height: 22rem;" src="hero.jpg" alt="hero">
-        <p class="text-[#6d6d6d] text-center text-2xl">years of sustainable business in Pakistan</p>
+        <p class="text-[#cb0f0f] text-center text-2xl">years of sustainable business in Pakistan</p>
     </div>
 </div>
 <div class="col-span-2 row-span-4 col-start-4 row-start-6">
     <div class="image" style="text-align: -webkit-center;">
         <img style="width: 18rem; height: 22rem;" src="hero.jpg" alt="hero">
-        <p class="text-[#6d6d6d] text-center text-2xl">years of sustainable business in Pakistan</p>
+        <p class="text-[#cb0f0f] text-center text-2xl">years of sustainable business in Pakistan</p>
     </div>
 </div>
 
@@ -195,6 +201,8 @@
     </div>
 
     <Location/>
+
+    <PhotoGallery />
 
 </div>
 

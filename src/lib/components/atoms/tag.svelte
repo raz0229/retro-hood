@@ -1,10 +1,11 @@
 <script>
 	export let text = 'Tag Text';
+	export let color = '#6d6d6d';
 </script>
 
 <div class="tag flex" style="gap: 1rem;">
-	<hr />
-	<div class="text text-md">{text}</div>
+	<hr style="border-top: 1px solid {color};" />
+	<div class="text text-md text-[{color}]">{text}</div>
 </div>
 
 <style>
@@ -14,7 +15,7 @@
 	}
 
 	.tag .text {
-		color: #6d6d6d;
+		/* color: #6d6d6d; */
 		text-transform: uppercase;
 	}
 
@@ -23,7 +24,6 @@
 		height: 3px;
         min-width: 55px;
 		border: 0;
-		border-top: 1px solid #6d6d6d;
 		margin: 0.75rem 0;
 		padding: 0;
 	}

@@ -34,6 +34,12 @@
         },
     ]
 
+    function redirectToServicesOnClick (e) {
+        e.addEventListener('click', () => {
+            location.href = '/about-us'
+        })
+    }
+
 </script>
 
 <Curve />
@@ -50,7 +56,9 @@
 
 	<div class="grid-container grid grid-cols-11 grid-rows-12 gap-0">
 		
-		<div class="col-span-2 row-span-4 col-start-4 row-start-1">
+		<div
+            use:redirectToServicesOnClick
+            class="col-span-2 row-span-4 col-start-4 row-start-1">
             <GridTile
                 image="{gridTiles[0].image}"
                 index="{gridTiles[0].index}"
@@ -59,7 +67,9 @@
                 details="{gridTiles[0].details}"
             />
         </div>
-        <div class="col-span-2 row-span-4 col-start-8 row-start-3">
+        <div
+            use:redirectToServicesOnClick 
+            class="col-span-2 row-span-4 col-start-8 row-start-3">
             <GridTile
                 image="{gridTiles[1].image}"
                 index="{gridTiles[1].index}"
@@ -68,7 +78,9 @@
                 details="{gridTiles[1].details}"
             />
         </div>
-        <div class="col-span-2 row-span-4 col-start-3 row-start-7">
+        <div
+            use:redirectToServicesOnClick 
+            class="col-span-2 row-span-4 col-start-3 row-start-7">
             <GridTile
                 image="{gridTiles[2].image}"
                 index="{gridTiles[2].index}"
@@ -77,7 +89,9 @@
                 details="{gridTiles[2].details}"
             />
         </div>
-		<div class="col-span-2 row-span-4 col-start-7 row-start-9">
+		<div
+            use:redirectToServicesOnClick 
+            class="col-span-2 row-span-4 col-start-7 row-start-9">
             <GridTile
                 image="{gridTiles[3].image}"
                 index="{gridTiles[3].index}"

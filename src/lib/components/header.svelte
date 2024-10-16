@@ -5,19 +5,19 @@
 
 	let navs = [
 		{
-			text: 'About us',
+			text: 'Our Company',
 			href: '/about-us'
 		},
 		{
-			text: 'Services',
+			text: 'Our Services',
 			href: '/services'
 		},
 		{
-			text: 'Products',
+			text: 'Our Products',
 			href: '/products'
 		},
 		{
-			text: 'Process',
+			text: 'Our Process',
 			href: '/process'
 		},
 		{
@@ -82,7 +82,7 @@
 				style="align-items: center;"
 			>
 				<div on:click={()=>location.href='/'} class="cursor-pointer flex flex-shrink-0 items-center">
-					<img class="h-40 w-auto" src="logo.png" alt="Your Company" />
+					<img class="" src="logo.png" alt="Your Company" />
 				</div>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
@@ -135,6 +135,24 @@
         padding: 1rem;
         padding-top: 2rem;
     }
+
+	img {
+		margin-top: 1rem;
+		width: 18rem;
+	}	
+	
+
+	@media only screen and (max-width: 850px) {
+		img {
+			width: 14rem;
+		}	
+	}
+
+	@media only screen and (max-width: 600px) {
+		img {
+			width: 10rem;
+		}	
+	}
 
 
 </style>
