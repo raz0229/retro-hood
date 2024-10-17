@@ -47,13 +47,20 @@
     <Tag text="Established in 2023" />
 
     {#if animate}
-    <h1
-    transition:slide={{ duration: 1000, delay: 300 }}
-		class="text-white font-normal text-3xl lg:pl-[16rem] md:pl-32 pl-2 lg:pr-[16rem] md:pr-32 pr-2"
-		style="line-height: 1.75rem;"
-	>
-    Hello, I’m Muhammad Mohid ,the CEO of <span class="text-[#cb0f0f]">Retrohood</span>, and I’d like to share our story.
-    </h1>
+
+    <div class="flex lg:flex-row md:flex-col flex-col justify-center lg:pl-[16rem] md:pl-32 pl-2 lg:pr-[16rem] md:pr-32 pr-2">
+        <div class="image mb-4">
+            <img class="w-96" src="/ceo.png" alt="Mohid">
+        </div>
+    
+        <h1
+        transition:slide={{ duration: 1000, delay: 300 }}
+            class="text-white font-normal text-3xl pl-8 pr-8"
+            style="line-height: 1.75rem;"
+        >
+        Hello, I’m Muhammad Mohid ,the CEO of <span class="text-[#cb0f0f]">Retrohood</span>, and I’d like to share our story.
+        </h1>
+    </div>
     {/if}
 
     <div class="flex flex-wrap lg:gap-20 md:gap-12 gap-2 justify-center">
