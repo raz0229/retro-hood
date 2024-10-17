@@ -4,6 +4,9 @@
     import ActionButton from './atoms/action-button.svelte';
 
 	let animate = false;
+	let slideshow = ['hero.jpg', 'hero1.jpg', 'hero2.jpg', 'hero3.jpg']
+	let currentImage = slideshow[0];
+	let currentIdex = 0;
 
 	function actionWhenInViewport(e) {
 		const observer = new IntersectionObserver((entries) => {
@@ -17,6 +20,11 @@
 
 		observer.observe(e);
 	}
+
+	setInterval(() => {
+		currentIdex = currentIdex < slideshow.length -1 ? currentIdex + 1 : 0
+		currentImage = slideshow[currentIdex];
+	}, 5000)
 </script>
 
 <div use:actionWhenInViewport>
@@ -34,7 +42,18 @@
 				</div>
 			</div>
 			<div class="hero-image flex-[3_3_0%] mt-36">
-				<div class="image"></div>
+
+
+				<div 
+					style='background-image: url("/{currentImage}");'
+					class="image">
+				</div>
+
+
+				
+
+
+
 				<div class="inner-text absolute top-[-7rem] left-[3rem]">
 					<div class="welcome text-sm" style="color: #9f9f9f">Welcome here!</div>
 					<div class="hero-text mt-3 text-4xl">
@@ -78,10 +97,10 @@
 	}
 
 	.hero-image > .image {
-		background-image: url("/hero.jpg");
 		background-position: top;
 		background-size: cover;
 		height: 15rem;
+		transition: all 0.7s ease-in;
 	}
 
 	.main-text {
