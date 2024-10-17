@@ -1,6 +1,9 @@
 <script>
 
+	import {  blur, fade, slide } from 'svelte/transition';
+
 	export let bgColor = '#f8f8f8'
+	let expand = false;
 
 	function actionWhenInViewport(e) {
 		const observer = new IntersectionObserver((entries) => {
@@ -48,11 +51,38 @@
 
 <!-- whatsapp icon -->
 <div class="relative">
-	<button class="z-20 text-white flex flex-col shrink-0 grow-0 justify-around 
-					fixed bottom-0 right-0 right-5 rounded-lg
+
+
+	{#if expand}
+
+	<div 
+		in:fade
+		class="exapandable">
+
+		<button class="z-20 text-white flex flex-col shrink-0 grow-0 justify-around 
+					fixed bottom-40 right-0 right-5 rounded-lg
 					mr-1 mb-5 lg:mr-5 lg:mb-5 xl:mr-10 xl:mb-10">
-	  <div class="p-3 rounded-full border-2 border-white bg-green-600">
-		<svg id='WhatsApp_24' width='48' height='48' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+	  <div class="p-3 rounded-full border-2 border-white bg-blue-600 hover:bg-blue-700">
+		
+			<svg id='Discord_24' width='36' height='36' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+				<g transform="matrix(0.45 0 0 0.45 12 12)" >
+				<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(140,158,255); fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -24)" d="M 40 12 C 40 12 35.415 8.411999999999999 30 8 L 29.512 8.975999999999999 C 34.408 10.174 36.654 11.891 39 14 C 34.955 11.935 30.961 10 24 10 C 17.039 10 13.045 11.935 9 14 C 11.346 11.891 14.018 9.985 18.488 8.975999999999999 L 18 8 C 12.318999999999999 8.537 8 12 8 12 C 8 12 2.8789999999999996 19.425 2 34 C 7.162 39.953 15 40 15 40 L 16.639 37.815 C 13.857 36.848 10.715 35.121 8 32 C 11.238 34.45 16.125 37 24 37 C 31.875 37 36.762 34.45 40 32 C 37.285 35.121 34.143 36.848 31.361 37.815 L 33 40 C 33 40 40.838 39.953 46 34 C 45.121 19.425 40 12 40 12 z M 17.5 30 C 15.567 30 14 28.209 14 26 C 14 23.791 15.567 22 17.5 22 C 19.433 22 21 23.791 21 26 C 21 28.209 19.433 30 17.5 30 z M 30.5 30 C 28.567 30 27 28.209 27 26 C 27 23.791 28.567 22 30.5 22 C 32.433 22 34 23.791 34 26 C 34 28.209 32.433 30 30.5 30 z" stroke-linecap="round" />
+				</g>
+				</svg>
+
+
+	  </div>
+  
+	</button>
+
+		<button class="z-20 text-white flex flex-col shrink-0 grow-0 justify-around 
+					fixed bottom-20 right-0 right-5 rounded-lg
+					mr-1 mb-5 lg:mr-5 lg:mb-5 xl:mr-10 xl:mb-10">
+	  <div class="p-3 rounded-full border-2 border-white bg-green-600 hover:bg-green-700">
+		
+		<svg id='WhatsApp_24' width='36' height='36' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
 
 
 			<g transform="matrix(0.42 0 0 0.42 12 12)" >
@@ -75,6 +105,34 @@
 			</g>
 			</g>
 			</svg>
+	  </div>
+  
+	</button>
+	</div>
+	{/if}
+
+
+	<button 
+		on:click={()=>expand=!expand}
+		class="z-20 text-white flex flex-col shrink-0 grow-0 justify-around 
+					fixed bottom-0 right-0 right-5 rounded-lg
+					mr-1 mb-5 lg:mr-5 lg:mb-5 xl:mr-10 xl:mb-10">
+	  <div class="p-3 rounded-full border-2 border-white bg-red-600 hover:bg-red-700">
+			{#if !expand}
+			<svg transition:slide style="rotate: 180deg;" id='Expand_Arrow_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#fff' opacity='0'/>
+				<g transform="matrix(0.48 0 0 0.48 12 12)" >
+				<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" translate(-25, -24.99)" d="M 44.988281 13.984375 C 44.726563 13.992188 44.476563 14.101563 44.292969 14.292969 L 25 33.585938 L 5.707031 14.292969 C 5.519531 14.097656 5.261719 13.992188 4.992188 13.988281 C 4.582031 13.992188 4.21875 14.238281 4.0625 14.613281 C 3.910156 14.992188 4 15.421875 4.292969 15.707031 L 24.292969 35.707031 C 24.683594 36.097656 25.316406 36.097656 25.707031 35.707031 L 45.707031 15.707031 C 46.003906 15.421875 46.09375 14.980469 45.9375 14.601563 C 45.777344 14.222656 45.402344 13.976563 44.988281 13.984375 Z" stroke-linecap="round" />
+				</g>
+			</svg>
+			{:else}
+			<svg transition:slide id='Multiply_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+				<g transform="matrix(1.3 0 0 1.3 12 12)" >
+				<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 5.7070312 4.2929688 L 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 L 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 L 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 L 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 z" stroke-linecap="round" />
+				</g>
+				</svg>
+			{/if}
 	  </div>
   
 	</button>

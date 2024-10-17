@@ -10,7 +10,7 @@
 
 </script>
 
-<div class="w-{item.width ?? '72'} mt-32 p-{item.padding ?? '0'} bg-[{item.backgroundColor ?? 'transaprent'}]">
+<div class="{item.width ? `w-${item.width}` : 'w-72'} mt-32 p-{item.padding ?? '0'} bg-[{item.backgroundColor ?? 'transaprent'}]">
     <h1 class="text-{item.indexColor ?? '[#6d6d6d]'} mt-4 mb-2 font-extralight text-2xl" style="line-height: 1.25rem;">
         {item.index}
     </h1>
