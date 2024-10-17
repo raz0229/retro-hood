@@ -45,6 +45,12 @@
 <Curve />
 <div class="items-center sm:items-stretch p-16">
 	<Tag text="Why us" />
+
+
+    <div class="player flex justify-center mb-16 relative">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GP1_V8bSHuA?si=UEXaPYTHG1-g0Xrg&autoplay=1&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
 	<div class="relative lg:text-5xl md:text-4xl text-2xl title text-white">
 		Shaping the <br /> future of Fashion Era
 	</div>
