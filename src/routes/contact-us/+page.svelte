@@ -39,37 +39,51 @@
 		</h1>
 	{/if}
 
+	<Location />
+
+	<div class="image flex justify-center mt-16">
+		<img src="support.jpg" alt="support">
+	</div>
+
     <Tag text="Contact us" />
-    <form class="form lg:pl-40 lg:pr-40 md:pl-24 md:pr-24 pl-4 pr-4">
-        <div style="line-height: 1.75rem;" class="text mb-8 font-bold text-white text-3xl">
-            We would love to hear from you <br> even if you just want to say Hi!
-        </div>
+    <div class="lg:flex justify-center gap-6" style="align-items: center;">
+		<h1
+			class="contact-us-now text-[#cb0f0f] font-bold text-8xl lg:pl-[12rem] md:pl-32 pl-8"
+			style="line-height: 4.75rem;"
+		>
+			CONTACT <br> US <br> NOW
+		</h1>
+		<form class="form lg:pl-40 lg:pr-40 md:pl-24 md:pr-24 pl-4 pr-4">
+			<div style="line-height: 1.75rem;" class="text mb-8 font-bold text-white text-3xl">
+				We would love to hear from you <br> even if you just want to say Hi!
+			</div>
+	
+			<div style="line-height: 1.75rem;" class="mt-16 text mb-8 font-light text-[#6d6d6d] text-3xl">
+				<input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="NAME" type="text">    
+			</div>
+	
+			<div class="lg:flex md:block block gap-16">
+				<div style="line-height: 1.75rem; flex-grow: 1;" class="mt-8 text mb-8 font-light text-[#6d6d6d] text-3xl">
+					<input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="EMAIL" type="email">    
+				</div>
+				<div style="line-height: 1.75rem; flex-grow: 1;" class="mt-8 text mb-8 font-light text-[#6d6d6d] text-3xl">
+					<input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="PHONE NUMBER" type="phone">    
+				</div>
+			</div>
+	
+			<div style="line-height: 1.75rem;" class="mt-16 text mb-8 font-light text-[#6d6d6d] text-3xl">
+				<input style="width: 100%" class="mb-16 bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="YOUR MESSAGE" type="text">    
+			</div>
+	
+			<div class="btn"
+				on:click="{submitHandler}"
+			>
+				<ActionButton text="Submit" />
+			</div>
+		</form>
+	</div>
 
-        <div style="line-height: 1.75rem;" class="mt-16 text mb-8 font-light text-[#6d6d6d] text-3xl">
-            <input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="NAME" type="text">    
-        </div>
 
-        <div class="lg:flex md:block block gap-16">
-            <div style="line-height: 1.75rem; flex-grow: 1;" class="mt-8 text mb-8 font-light text-[#6d6d6d] text-3xl">
-                <input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="EMAIL" type="email">    
-            </div>
-            <div style="line-height: 1.75rem; flex-grow: 1;" class="mt-8 text mb-8 font-light text-[#6d6d6d] text-3xl">
-                <input style="width: 100%" class="bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="PHONE NUMBER" type="phone">    
-            </div>
-        </div>
-
-        <div style="line-height: 1.75rem;" class="mt-16 text mb-8 font-light text-[#6d6d6d] text-3xl">
-            <input style="width: 100%" class="mb-16 bg-transparent border-b-2 pb-2 border-[#6d6d6d]" placeholder="YOUR MESSAGE" type="text">    
-        </div>
-
-        <div class="btn"
-            on:click="{submitHandler}"
-        >
-            <ActionButton text="Submit" />
-        </div>
-    </form>
-
-    <Location />
 </div>
 
 <style>
@@ -83,6 +97,14 @@
 		max-width: 100%;
 		height: 100%;
 	}
+
+	@media only screen and (max-width: 1580px) {
+		.contact-us-now {
+		display: none;
+		}
+
+  }
+
 
 	.container {
 		background-color: #0a0909;

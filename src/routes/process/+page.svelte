@@ -1,10 +1,13 @@
 <script>
 	import Tag from '$lib/components/atoms/tag.svelte';
 	import Item from '$lib/components/atoms/item.svelte';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 
 	import { fade, scale } from 'svelte/transition';
 
 	let animate = false;
+	let processing = false;
 
 	function actionWhenInViewport(e) {
 		const observer = new IntersectionObserver((entries) => {
@@ -13,6 +16,20 @@
 				animate = true;
 			} else {
 				animate = false;
+			}
+		});
+
+		observer.observe(e);
+	}
+
+	function startProcessing(e) {
+		const observer = new IntersectionObserver((entries) => {
+			if (entries[0].isIntersecting) {
+				// element in viewport
+				processing = true;
+				setTimeout(() => {
+					processing = false;
+				}, 3000);
 			}
 		});
 
@@ -88,142 +105,180 @@
 		}
 	];
 
-    let models = [
-        {
-            index: '01',
-            title: 'Quality',
-            details: 'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
-            color: 'white'
-        },
-        {
-            index: '02',
-            title: 'Quality',
-            details: 'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
-            color: 'white'
-        },
-        {
-            index: '03',
-            title: 'Quality',
-            details: 'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
-            color: 'white'
-        },
-        {
-            index: '04',
-            title: 'Quality',
-            details: 'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
-            color: 'white'
-        },
-    ]
-    
+	let models = [
+		{
+			index: '01',
+			title: 'Quality',
+			details:
+				'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
+			color: 'white'
+		},
+		{
+			index: '02',
+			title: 'Quality',
+			details:
+				'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
+			color: 'white'
+		},
+		{
+			index: '03',
+			title: 'Quality',
+			details:
+				'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
+			color: 'white'
+		},
+		{
+			index: '04',
+			title: 'Quality',
+			details:
+				'More like an ad hoc approach, we provide support based on your need for the day and bill based on the time spent. No strings attached, or yes!?!',
+			color: 'white'
+		}
+	];
 
+	onMount(() => {
+		if (browser) {
+			processing = true;
+			setTimeout(() => {
+				processing = false;
+			}, 3000);
+		}
+	});
 </script>
 
 <svelte:head>
-    <title>RetroHood | Process</title>
+	<title>RetroHood | Process</title>
 </svelte:head>
 
-<div use:actionWhenInViewport class="container sm:items-stretch p-16">
-	<Tag text="HOW WE DO IT" />
-	{#if animate}
-	<h1
-		transition:scale={{ duration: 500, start: 0.5 }}
-		class="text-white font-extrabold text-5xl lg:pl-[12rem] md:pl-32 pl-8"
-		style="line-height: 2.75rem;"
-	>
-		Everything starts <br /> with conveying <br /> with the users
-	</h1>
-	{/if}
+{#if processing}
+	<div class="container p-16 mt-48">
+		<div
+			transition:scale={{ duration: 2000, delay: 300, start: 0.2 }}
+			class="image flex justify-center"
+		>
+			<img src="process.png" alt="PROCESSING" />
+		</div>
+	</div>
+{:else}
+	<div use:actionWhenInViewport class="container sm:items-stretch p-16">
+		<Tag text="HOW WE DO IT" />
+		{#if animate}
+			<h1
+				in:scale={{ duration: 500, start: 0.5 }}
+				class="text-white font-extrabold text-5xl lg:pl-[12rem] md:pl-32 pl-8"
+				style="line-height: 2.75rem;"
+			>
+				Everything starts <br /> with conveying <br /> with the users
+			</h1>
+		{/if}
 
-	<Tag text="Ideology" />
-	{#if animate}
-	<h1
-		transition:scale={{ duration: 500, start: 0.5 }}
-		class="text-[#6d6d6d] font-normal text-3xl lg:pl-[12rem] md:pl-32 pl-8"
-		style="line-height: 1.75rem;"
-	>
-		Being a <span class="text-[#cb0f0f]">user-centric business for businesses/brands</span>,<br />
-		we make it happen for you through quality and ease of <br />use. Here is the path we follow
-		secretly.
-	</h1>
-	{/if}
-</div>
+		<Tag text="Ideology" />
+		{#if animate}
+			<h1
+				transition:scale={{ duration: 500, start: 0.5 }}
+				class="text-[#6d6d6d] font-normal text-3xl lg:pl-[12rem] md:pl-32 pl-8"
+				style="line-height: 1.75rem;"
+			>
+				Being a <span class="text-[#cb0f0f]">user-centric business for businesses/brands</span>,<br
+				/>
+				we make it happen for you through quality and ease of <br />use. Here is the path we follow
+				secretly.
+			</h1>
+		{/if}
+	</div>
 
-<div 
-	class="container sm:items-stretch lg:p-16 md:p-8 p-2">
-	<Tag text="Process" />
-	<div class="flex justify-between lg:p-16 md:p-8 p-8">
+	<div class="container sm:items-stretch lg:p-16 md:p-8 p-2">
+		<Tag text="Process" />
+		<div transition:fade={{ duration: 500 }} class="animate-appear">
+			<div class="flex justify-between lg:p-16 md:p-8 p-8">
+				<div>
+					<h1
+						class="text-white font-medium lg:text-5xl md:text-5xl text-3xl lg:pl-[12rem] md:pl-32 pl-2"
+						style="line-height: 2.75rem;"
+					>
+						Quality is Everything
+					</h1>
+					<h1
+						class="text-white mt-4 font-light text-2xl lg:pl-[12rem] md:pl-32 pl-2"
+						style="line-height: 1.25rem;"
+					>
+						May it be about yourself or others, We <br />
+						apply this in whatever we do. <br />
+						The path:
+					</h1>
+				</div>
+				<div
+					style="max-width: 8rem;"
+					class="lg:block md:hidden hidden image lg:p-12 md:p-8 p-2 lg:mr-[12rem] md:mr-32 mr-2 bg-red-700 rounded-full"
+				>
+					<img style="width: 2rem; rotate: -180deg; " src="arrow-slanted-white.png" alt="" />
+				</div>
+			</div>
+
+			{#each processes as process, i}
+				<div
+					style="align-items: end;"
+					class="flex lg:flex-row md:flex-col flex-col justify-between lg:gap-24 md:gap-16 gap-4 lg:mr-64 lg:ml-64 md:mr-16 md:ml-16 mr-4 ml-4"
+				>
+					{#if i % 2 == 0}
+						<div class="flex-1"><Item item={process} /></div>
+						<div class="image flex-1">
+							<img style="width: 40rem;" src={process.image} alt="/hero.jpg" />
+						</div>
+					{:else}
+						<div class="image flex-1">
+							<img style="width: 40rem;" src={process.image} alt="/hero.jpg" />
+						</div>
+						<div class="flex-1"><Item item={process} /></div>
+					{/if}
+				</div>
+			{/each}
+		</div>
+	</div>
+
+	<div use:actionWhenInViewport class="container sm:items-stretch p-16">
+		<Tag text="Model" />
+
 		<div>
 			<h1
 				class="text-white font-medium lg:text-5xl md:text-5xl text-3xl lg:pl-[12rem] md:pl-32 pl-2"
 				style="line-height: 2.75rem;"
 			>
-				Quality is Everything
-			</h1>
-			<h1
-				class="text-white mt-4 font-light text-2xl lg:pl-[12rem] md:pl-32 pl-2"
-				style="line-height: 1.25rem;"
-			>
-				May it be about yourself or others, We <br />
-				apply this in whatever we do. <br />
-				The path:
+				Getting things done to <br /> your needs
 			</h1>
 		</div>
 		<div
-			style="max-width: 8rem;"
-			class="lg:block md:hidden hidden image lg:p-12 md:p-8 p-2 lg:mr-[12rem] md:mr-32 mr-2 bg-red-700 rounded-full"
+			class="lg:grid lg:pl-42 lg:pr-42 md:flex md:flex-wrap block lg:grid-cols-12 lg:grid-rows-12 gap-4"
 		>
-			<img style="width: 2rem; rotate: -180deg; " src="arrow-slanted-white.png" alt="" />
+			{#if animate}
+				<div
+					transition:fade={{ delay: 300, duration: 900 }}
+					class="col-span-3 row-span-3 col-start-3"
+				>
+					<Item item={models[0]} />
+				</div>
+				<div
+					transition:fade={{ delay: 300, duration: 900 }}
+					class="col-span-3 row-span-3 col-start-8 row-start-2"
+				>
+					<Item item={models[1]} />
+				</div>
+				<div
+					transition:fade={{ delay: 300, duration: 900 }}
+					class="col-span-3 row-span-3 col-start-3 row-start-5"
+				>
+					<Item item={models[2]} />
+				</div>
+				<div
+					transition:fade={{ delay: 300, duration: 900 }}
+					class="col-span-3 row-span-3 col-start-8 row-start-6"
+				>
+					<Item item={models[3]} />
+				</div>
+			{/if}
 		</div>
 	</div>
-
-
-	{#each processes as process, i}
-	<div style="align-items: end;" class="flex lg:flex-row md:flex-col flex-col justify-between lg:gap-24 md:gap-16 gap-4 lg:mr-64 lg:ml-64 md:mr-16 md:ml-16 mr-4 ml-4">
-		{#if i%2==0}
-		<div class="flex-1"><Item item={process} /></div>
-		<div class="image flex-1">
-			<img style="width: 40rem;" src="{process.image}" alt="/hero.jpg">
-		</div>
-		{:else}
-		<div class="image flex-1">
-			<img style="width: 40rem;" src="{process.image}" alt="/hero.jpg">
-		</div>
-		<div class="flex-1"><Item item={process} /></div>
-		
-		{/if}
-	</div>
-	{/each}
-	
-		
-
-	
-</div>
-
-<div
-	use:actionWhenInViewport
-	class="container sm:items-stretch p-16">
-	<Tag text="Model" />
-	
-    <div>
-        <h1
-            class="text-white font-medium lg:text-5xl md:text-5xl text-3xl lg:pl-[12rem] md:pl-32 pl-2"
-            style="line-height: 2.75rem;"
-        >
-            Getting things done to <br> your needs
-        </h1>
-        
-    </div>
-	<div
-		class="lg:grid lg:pl-42 lg:pr-42 md:flex md:flex-wrap block lg:grid-cols-12 lg:grid-rows-12 gap-4"
-	>
-		{#if animate}
-		<div transition:fade={{ delay: 300, duration: 900 }} class="col-span-3 row-span-3 col-start-3"><Item item={models[0]} /></div>
-		<div transition:fade={{ delay: 300, duration: 900  }} class="col-span-3 row-span-3 col-start-8 row-start-2"><Item item={models[1]} /></div>
-		<div transition:fade={{ delay: 300, duration: 900 }} class="col-span-3 row-span-3 col-start-3 row-start-5"><Item item={models[2]} /></div>
-		<div transition:fade={{ delay: 300, duration: 900  }} class="col-span-3 row-span-3 col-start-8 row-start-6"><Item item={models[3]} /></div>
-		{/if}
-	</div>
-</div>
+{/if}
 
 <style>
 	.container,
